@@ -1,0 +1,813 @@
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+    {% load static %}
+    <head>
+        <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>Browny</title>
+
+     
+   <!--font-awesome.min.css-->
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+<!--flat icon css-->
+<link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+
+<!--animate.css-->
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+<!--owl.carousel.css-->
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+<!--bootstrap.min.css-->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!-- bootsnav -->
+<link rel="stylesheet" href="{% static 'assets/css/bootsnav.css' %}">
+
+<!--style.css-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--responsive.css-->
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		
+        <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+	<style>
+		.welcome-hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    background: url("{% static 'images/1.jpg' %}") no-repeat;
+    background-size:cover;
+    background-position: center;
+    height:890px;
+}
+	</style>
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+		
+		<!-- top-area Start -->
+		<header class="top-area">
+			<div class="header-area">
+				<!-- Start Navigation -->
+				<nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+			
+					<div class="container">
+			
+						<!-- Start Header Navigation -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+								<i class="fa fa-bars"></i>
+							</button>
+							<a class="navbar-brand" href="index.html">EmployeeMS</a>
+						</div><!--/.navbar-header-->
+						<!-- End Header Navigation -->
+			
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+							<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+								<li class="smooth-menu "><a href="#dashboard">Dashboard</a></li>
+								<li class="smooth-menu"><a href="#employee-list">Employees</a></li>
+								<li class="smooth-menu"><a href="#departments">Departments</a></li>
+								<li class="smooth-menu"><a href="#attendance">Attendance</a></li>
+								<li class="smooth-menu"><a href="#payroll">Payroll</a></li>
+								<li class="smooth-menu" style="color: red;"><a href="{% url 'logout' %}" style="color: red;"> <b style="color: red;">LogOut</b> </a></li>
+
+								
+                                
+                                
+							</ul><!--/.nav -->
+						</div><!-- /.navbar-collapse -->
+					</div><!--/.container-->
+				</nav><!--/nav-->
+				<!-- End Navigation -->
+			</div><!--/.header-area-->
+			
+		    <div class="clearfix"></div>
+
+		</header><!-- /.top-area-->
+		<!-- top-area End -->
+	
+<!--welcome-hero start -->
+<section id="welcome-hero" class="welcome-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="header-text">
+                    <h2>Welcome to <span>,</span> <br> Employee <br> Management System <span>.</span></h2>
+                    <p>Streamlining Employee Information and Operations</p>
+                    <a href="" download>Download User Guide</a>
+                </div><!--/.header-text-->
+            </div><!--/.col-->
+        </div><!-- /.row-->
+    </div><!-- /.container-->
+</section><!--/.welcome-hero-->
+<!--welcome-hero end -->
+
+<!--about start -->
+<section id="about" class="about">
+    <div class="section-heading text-center">
+        <h2>About Our System</h2>
+    </div>
+    <div class="container">
+        <div class="about-content">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="single-about-txt">
+                        <h3>
+                            Our Employee Management System is designed to efficiently manage employee data, track attendance, and streamline payroll processing.
+                        </h3>
+                        <p>
+                            This system provides a comprehensive solution to handle all aspects of employee management, from personal details and job information to performance tracking and benefits administration. It's built to enhance productivity and ensure that HR operations run smoothly.
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="single-about-add-info">
+                                    <h3>Support Phone</h3>
+                                    <p>987-123-6547</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="single-about-add-info">
+                                    <h3>Support Email</h3>
+                                    <p>support@employeems.com</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="single-about-add-info">
+                                    <h3>Website</h3>
+                                    <p>www.employeems.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-offset-1 col-sm-5">
+                    <div class="single-about-img">
+                        <img src="{% static 'images/4.jpg' %}" style="background-repeat: no-repeat; background-size: cover;" alt="system_image">
+                        <div class="about-list-icon">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                </li><!-- / li -->
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                    </a>
+                                </li><!-- / li -->
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li><!-- / li -->
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </li><!-- / li -->
+                            </ul><!-- / ul -->
+                        </div><!-- /.about-list-icon -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/.about-->
+
+
+		<!--about end -->
+		
+<!--education start -->
+<section id="education" class="education">
+    <div class="section-heading text-center">
+        <h2>Training & Certification</h2>
+    </div>
+    <div class="container">
+        <div class="education-horizontal-timeline">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="single-horizontal-timeline">
+                        <div class="experience-time">
+                            <h2>2023</h2>
+                            <h3>Certified <span>Human Resources</span> Manager</h3>
+                        </div><!--/.experience-time-->
+                        <div class="timeline-horizontal-border">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span class="single-timeline-horizontal"></span>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-content">
+                                <h4 class="title">
+                                    HR Certification Institute
+                                </h4>
+                                <h5>Online Course</h5>
+                                <p class="description">
+                                    Completed certification in Human Resource Management with a focus on employee relations and regulatory compliance.
+                                </p>
+                            </div><!--/.timeline-content-->
+                        </div><!--/.timeline-->
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="single-horizontal-timeline">
+                        <div class="experience-time">
+                            <h2>2021</h2>
+                            <h3>Certified <span>Project Management</span> Professional</h3>
+                        </div><!--/.experience-time-->
+                        <div class="timeline-horizontal-border">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span class="single-timeline-horizontal"></span>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-content">
+                                <h4 class="title">
+                                    Project Management Institute
+                                </h4>
+                                <h5>Online Course</h5>
+                                <p class="description">
+                                    Completed a comprehensive certification in Project Management with an emphasis on leadership and team management.
+                                </p>
+                            </div><!--/.timeline-content-->
+                        </div><!--/.timeline-->
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="single-horizontal-timeline">
+                        <div class="experience-time">
+                            <h2>2019</h2>
+                            <h3>Diploma <span>in </span>Employee Relations</h3>
+                        </div><!--/.experience-time-->
+                        <div class="timeline-horizontal-border">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span class="single-timeline-horizontal spacial-horizontal-line"></span>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-content">
+                                <h4 class="title">
+                                    University of Illinois
+                                </h4>
+                                <h5>Illinois, USA</h5>
+                                <p class="description">
+                                    Earned a diploma in Employee Relations, focusing on conflict resolution, workplace culture, and employee engagement strategies.
+                                </p>
+                            </div><!--/.timeline-content-->
+                        </div><!--/.timeline-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section><!--/.education-->
+<!--education end -->
+
+<!--skills start -->
+<section id="skills" class="skills">
+    <div class="skill-content">
+        <div class="section-heading text-center">
+            <h2>Skills</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="single-skill-content">
+                        <div class="barWrapper">
+                            <span class="progressText">Employee Management</span>
+                            <div class="single-progress-txt">
+                                <div class="progress ">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+                                    </div>
+                                </div>
+                                <h3>90%</h3>
+                            </div>
+                        </div><!-- /.barWrapper -->
+                        <div class="barWrapper">
+                            <span class="progressText">Team Leadership</span>
+                            <div class="single-progress-txt">
+                                <div class="progress ">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="10" aria-valuemax="100" style="">
+                                    </div>
+                                </div>
+                                <h3>85%</h3>
+                            </div>
+                        </div><!-- /.barWrapper -->
+                        <div class="barWrapper">
+                            <span class="progressText">HR Regulations</span>
+                            <div class="single-progress-txt">
+                                <div class="progress ">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="10" aria-valuemax="100" style="">
+                                    </div>
+                                </div>
+                                <h3>97%</h3>
+                            </div>
+                        </div><!-- /.barWrapper -->
+                        <div class="barWrapper">
+                            <span class="progressText">Conflict Resolution</span>
+                            <div class="single-progress-txt">
+                                <div class="progress ">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+                                    </div>
+                                </div>
+                                <h3>90%</h3>
+                            </div>
+                        </div><!-- /.barWrapper -->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="single-skill-content">
+                        <div class="barWrapper">
+                            <span class="progressText">Recruitment & Hiring</span>
+                            <div class="single-progress-txt">
+                                <div class="progress ">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+                                    </div>
+                                </div>
+                                <h3>90%</h3>
+                            </div>
+                        </div><!-- /.barWrapper -->
+                        <div class="barWrapper">
+                            <span class="progressText">Performance Management</span>
+                            <div class="single-progress-txt">
+                                <div class="progress ">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="10" aria-valuemax="100" style="">
+                                    </div>
+                                </div>
+                                <h3>85%</h3>
+                            </div>
+                        </div><!-- /.barWrapper -->
+                        <div class="barWrapper">
+                            <span class="progressText">Training & Development</span>
+                            <div class="single-progress-txt">
+                                <div class="progress ">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="10" aria-valuemax="100" style="">
+                                    </div>
+                                </div>
+                                <h3>97%</h3>
+                            </div>
+                        </div><!-- /.barWrapper -->
+                        <div class="barWrapper">
+                            <span class="progressText">Organizational Development</span>
+                            <div class="single-progress-txt">
+                                <div class="progress ">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+                                    </div>
+                                </div>
+                                <h3>90%</h3>
+                            </div>
+                        </div><!-- /.barWrapper -->
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div>  <!-- /.container -->
+    </div><!-- /.skill-content-->
+</section><!--/.skills-->
+<!--skills end -->
+
+
+
+		<!--experience start -->
+		<section id="experience" class="experience">
+			<div class="section-heading text-center">
+				<h2>Experience</h2>
+			</div>
+			<div class="container">
+				<div class="experience-content">
+					<div class="main-timeline">
+						<ul>
+							<li>
+								<div class="single-timeline-box fix">
+									<div class="row">
+										<div class="col-md-5">
+											<div class="experience-time text-right">
+												<h2>2020 - Present</h2>
+												<h3>Employee Relations Manager</h3>
+											</div><!--/.experience-time-->
+										</div><!--/.col-->
+										<div class="col-md-offset-1 col-md-5">
+											<div class="timeline">
+												<div class="timeline-content">
+													<h4 class="title">
+														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+														ABC Corp
+													</h4>
+													<h5>New York, USA</h5>
+													<p class="description">
+														Managed employee relations and ensured a positive workplace culture. Handled conflict resolution, employee grievances, and facilitated communication between staff and management.
+													</p>
+												</div><!--/.timeline-content-->
+											</div><!--/.timeline-->
+										</div><!--/.col-->
+									</div>
+								</div><!--/.single-timeline-box-->
+							</li>
+		
+							<li>
+								<div class="single-timeline-box fix">
+									<div class="row">
+										<div class="col-md-offset-1 col-md-5 experience-time-responsive">
+											<div class="experience-time">
+												<h2>
+													<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+													2017 - 2020
+												</h2>
+												<h3>HR Generalist</h3>
+											</div><!--/.experience-time-->
+										</div><!--/.col-->
+										<div class="col-md-5">
+											<div class="timeline">
+												<div class="timeline-content text-right">
+													<h4 class="title">
+														XYZ Ltd.
+													</h4>
+													<h5>Los Angeles, USA</h5>
+													<p class="description">
+														Oversaw various HR functions, including recruitment, employee onboarding, performance management, and compliance with labor laws.
+													</p>
+												</div><!--/.timeline-content-->
+											</div><!--/.timeline-->
+										</div><!--/.col-->
+										<div class="col-md-offset-1 col-md-5 experience-time-main">
+											<div class="experience-time">
+												<h2>
+													<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+													2017 - 2020
+												</h2>
+												<h3>HR Generalist</h3>
+											</div><!--/.experience-time-->
+										</div><!--/.col-->
+									</div>
+								</div><!--/.single-timeline-box-->
+							</li>
+		
+							<li>
+								<div class="single-timeline-box fix">
+									<div class="row">
+										<div class="col-md-5">
+											<div class="experience-time text-right">
+												<h2>2014 - 2017</h2>
+												<h3>Recruitment Specialist</h3>
+											</div><!--/.experience-time-->
+										</div><!--/.col-->
+										<div class="col-md-offset-1 col-md-5">
+											<div class="timeline">
+												<div class="timeline-content">
+													<h4 class="title">
+														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+														QRS Corp
+													</h4>
+													<h5>Chicago, USA</h5>
+													<p class="description">
+														Led recruitment efforts, managed the hiring process, conducted interviews, and collaborated with department heads to fulfill staffing needs.
+													</p>
+												</div><!--/.timeline-content-->
+											</div><!--/.timeline-->
+										</div><!--/.col-->
+									</div>
+								</div><!--/.single-timeline-box-->
+							</li>
+		
+							<li>
+								<div class="single-timeline-box fix">
+									<div class="row">
+										<div class="col-md-offset-1 col-md-5 experience-time-responsive">
+											<div class="experience-time">
+												<h2>
+													<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+													2012 - 2014
+												</h2>
+												<h3>HR Assistant</h3>
+											</div><!--/.experience-time-->
+										</div><!--/.col-->
+										<div class="col-md-5">
+											<div class="timeline">
+												<div class="timeline-content text-right">
+													<h4 class="title">
+														DEF Inc.
+													</h4>
+													<h5>Houston, USA</h5>
+													<p class="description">
+														Assisted in day-to-day HR operations, maintained employee records, and supported payroll and benefits administration.
+													</p>
+												</div><!--/.timeline-content-->
+											</div><!--/.timeline-->
+										</div><!--/.col-->
+										<div class="col-md-offset-1 col-md-5 experience-time-main">
+											<div class="experience-time">
+												<h2>
+													<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+													2012 - 2014
+												</h2>
+												<h3>HR Assistant</h3>
+											</div><!--/.experience-time-->
+										</div><!--/.col-->
+									</div>
+								</div><!--/.single-timeline-box-->
+							</li>
+						</ul>
+					</div><!--.main-timeline-->
+				</div><!--.experience-content-->
+			</div>
+		</section><!--/.experience-->
+
+		
+		<!--experience end -->
+
+<!--profiles start -->
+<section id="profiles" class="profiles">
+    <div class="profiles-details">
+        <div class="section-heading text-center">
+            <h2>Profiles</h2>
+        </div>
+        <div class="container">
+            <div class="profiles-content">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="single-profile">
+                            <div class="profile-txt">
+                                <a href="https://www.linkedin.com" target="_blank"><i class="flaticon-linkedin"></i></a>
+                                <div class="profile-icon-name">LinkedIn</div>
+                            </div>
+                            <div class="single-profile-overlay">
+                                <div class="profile-txt">
+                                    <a href="https://www.linkedin.com" target="_blank"><i class="flaticon-linkedin"></i></a>
+                                    <div class="profile-icon-name">LinkedIn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="single-profile">
+                            <div class="profile-txt">
+                                <a href="https://www.hubspot.com" target="_blank"><i class="flaticon-hubspot"></i></a>
+                                <div class="profile-icon-name">HubSpot</div>
+                            </div>
+                            <div class="single-profile-overlay">
+                                <div class="profile-txt">
+                                    <a href="https://www.hubspot.com" target="_blank"><i class="flaticon-hubspot"></i></a>
+                                    <div class="profile-icon-name">HubSpot</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="single-profile">
+                            <div class="profile-txt">
+                                <a href="https://www.adp.com" target="_blank"><i class="flaticon-adp"></i></a>
+                                <div class="profile-icon-name">ADP</div>
+                            </div>
+                            <div class="single-profile-overlay">
+                                <div class="profile-txt">
+                                    <a href="https://www.adp.com" target="_blank"><i class="flaticon-adp"></i></a>
+                                    <div class="profile-icon-name">ADP</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="single-profile profile-no-border">
+                            <div class="profile-txt">
+                                <a href="https://www.bamboohr.com" target="_blank"><i class="flaticon-bamboohr"></i></a>
+                                <div class="profile-icon-name">BambooHR</div>
+                            </div>
+                            <div class="single-profile-overlay">
+                                <div class="profile-txt">
+                                    <a href="https://www.bamboohr.com" target="_blank"><i class="flaticon-bamboohr"></i></a>
+                                    <div class="profile-icon-name">BambooHR</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-border"></div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="single-profile">
+                            <div class="profile-txt">
+                                <a href="https://www.workday.com" target="_blank"><i class="flaticon-workday"></i></a>
+                                <div class="profile-icon-name">Workday</div>
+                            </div>
+                            <div class="single-profile-overlay">
+                                <div class="profile-txt">
+                                    <a href="https://www.workday.com" target="_blank"><i class="flaticon-workday"></i></a>
+                                    <div class="profile-icon-name">Workday</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="single-profile">
+                            <div class="profile-txt">
+                                <a href="https://www.paycor.com" target="_blank"><i class="flaticon-paycor"></i></a>
+                                <div class="profile-icon-name">Paycor</div>
+                            </div>
+                            <div class="single-profile-overlay">
+                                <div class="profile-txt">
+                                    <a href="https://www.paycor.com" target="_blank"><i class="flaticon-paycor"></i></a>
+                                    <div class="profile-icon-name">Paycor</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="single-profile">
+                            <div class="profile-txt">
+                                <a href="https://www.zenefits.com" target="_blank"><i class="flaticon-zenefits"></i></a>
+                                <div class="profile-icon-name">Zenefits</div>
+                            </div>
+                            <div class="single-profile-overlay">
+                                <div class="profile-txt">
+                                    <a href="https://www.zenefits.com" target="_blank"><i class="flaticon-zenefits"></i></a>
+                                    <div class="profile-icon-name">Zenefits</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="single-profile profile-no-border">
+                            <div class="profile-txt">
+                                <a href="https://www.gusto.com" target="_blank"><i class="flaticon-gusto"></i></a>
+                                <div class="profile-icon-name">Gusto</div>
+                            </div>
+                            <div class="single-profile-overlay">
+                                <div class="profile-txt">
+                                    <a href="https://www.gusto.com" target="_blank"><i class="flaticon-gusto"></i></a>
+                                    <div class="profile-icon-name">Gusto</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/.profiles-->
+<!--profiles end -->
+
+
+
+
+
+<!--contact start -->
+<section id="contact" class="contact">
+    <div class="section-heading text-center">
+        <h2>Contact Us</h2>
+    </div>
+    <div class="container">
+        <div class="contact-content">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-5 col-sm-6">
+                    <div class="single-contact-box">
+                        <div class="contact-form">
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                          <input type="text" class="form-control" id="name" placeholder="Name*" name="name">
+                                        </div><!--/.form-group-->
+                                    </div><!--/.col-->
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="email" placeholder="Email*" name="email">
+                                        </div><!--/.form-group-->
+                                    </div><!--/.col-->
+                                </div><!--/.row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+                                        </div><!--/.form-group-->
+                                    </div><!--/.col-->
+                                </div><!--/.row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="8" id="comment" placeholder="Message" ></textarea>
+                                        </div><!--/.form-group-->
+                                    </div><!--/.col-->
+                                </div><!--/.row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="single-contact-btn">
+                                            <button type="submit" class="contact-btn">Submit</button>
+                                        </div><!--/.single-contact-btn-->
+                                    </div><!--/.col-->
+                                </div><!--/.row-->
+                            </form><!--/form-->
+                        </div><!--/.contact-form-->
+                    </div><!--/.single-contact-box-->
+                </div><!--/.col-->
+                <div class="col-md-offset-1 col-md-5 col-sm-6">
+                    <div class="single-contact-box">
+                        <div class="contact-address">
+                            <div class="contact-add-head">
+                                <h3>Employee Management System</h3>
+                                <p>Providing comprehensive HR solutions</p>
+                            </div>
+                            <div class="contact-add-info">
+                                <div class="single-contact-add-info">
+                                    <h3>Phone</h3>
+                                    <p>123-456-7890</p>
+                                </div>
+                                <div class="single-contact-add-info">
+                                    <h3>Email</h3>
+                                    <p>info@yourcompany.com</p>
+                                </div>
+                                <div class="single-contact-add-info">
+                                    <h3>Website</h3>
+                                    <p>www.yourcompany.com</p>
+                                </div>
+                            </div>
+                        </div><!--/.contact-address-->
+                        <div class="social-icons">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li><!--/li-->
+                            </ul><!--/ul-->
+                        </div><!--/.social-icons-->
+                    </div><!--/.single-contact-box-->
+                </div><!--/.col-->
+            </div><!--/.row-->
+        </div><!--/.contact-content-->
+    </div><!--/.container-->
+</section><!--/.contact-->
+<!--contact end -->
+
+
+<!--footer-copyright start-->
+<footer id="footer-copyright" class="footer-copyright">
+    <div class="container">
+        <div class="hm-footer-copyright text-center">
+            <p>
+                &copy; 2024 Your Company Name. All rights reserved. Designed and developed by <a href="https://www.yourcompany.com/">Your Company</a>
+            </p><!--/p-->
+        </div><!--/.text-center-->
+    </div><!--/.container-->
+
+    <div id="scroll-Top">
+        <div class="return-to-top">
+            <i class="fa fa-angle-up" id="scroll-top"></i>
+        </div>
+    </div><!--/.scroll-Top-->
+    
+</footer><!--/.footer-copyright-->
+<!--footer-copyright end-->
+
+		
+		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+<!-- jQuery -->
+<script src="{% static 'js/jquery.js' %}"></script>
+
+<!-- Modernizr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<!-- Bootsnav -->
+<script src="{% static 'js/bootsnav.js' %}"></script>
+
+<!-- jQuery Sticky -->
+<script src="{% static 'js/jquery.sticky.js' %}"></script>
+
+<!-- For Progress Bar -->
+<script src="{% static 'js/progressbar.js' %}"></script>
+<script src="{% static 'js/jquery.appear.js' %}"></script>
+
+<!-- Owl Carousel -->
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+<!-- jQuery Easing -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+<!-- Custom JS -->
+<script src="{% static 'js/custom.js' %}"></script>
+        
+    </body>
+	
+</html>

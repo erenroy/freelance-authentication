@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="{% static 'css/script.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function getLocationAndSubmitForm() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(sendLocationToServer, showError);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function sendLocationToServer(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
+                .then(response => response.json())
+                .then(data => {
+                    const form = document.getElementById('loginForm');
+                    const location = data.address.country + ', ' + (data.address.city || data.address.town || 'Unknown city');
+
+                    // Add latitude, longitude, and location as hidden inputs
+                    const latInput = document.createElement('input');
+                    latInput.type = 'hidden';
+                    latInput.name = 'latitude';
+                    latInput.value = lat;
+                    form.appendChild(latInput);
+
+                    const lonInput = document.createElement('input');
+                    lonInput.type = 'hidden';
+                    lonInput.name = 'longitude';
+                    lonInput.value = lon;
+                    form.appendChild(lonInput);
+
+                    const locationInput = document.createElement('input');
+                    locationInput.type = 'hidden';
+                    locationInput.name = 'location';
+                    locationInput.value = location;
+                    form.appendChild(locationInput);
+
+                    form.submit();
+                })
+                .catch(error => {
+                    alert("Unable to retrieve location details.");
+                    console.error(error);
+                });
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Location information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get user location timed out.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.");
+                    break;
+            }
+        }
+
+        function startCounter() {
+            var count = 10;
+            var counterElement = document.getElementById('counter');
+            var interval = setInterval(function () {
+                if (count <= 0) {
+                    clearInterval(interval);
+                    counterElement.innerHTML = "Kindly log in again to see if admin has approved your login.";
+                } else {
+                    counterElement.innerHTML = "Waiting for admin approval... Please wait " + count + " seconds.";
+                    count--;
+                }
+            }, 1000);
+        }
+    </script>
+</head>
+<style>
+    #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+#submit {
+    border-radius: 20px;
+    width: 80%;
+    font-weight: 600;
+    color: black;
+    border: 1px solid #FF416C; /* Corrected */
+    background-color: white;
+}
+#submit:hover{
+    cursor: pointer;
+}
+.ghost:hover{
+    cursor: pointer;
+}
+</style>
+<body onload="startCounter()">
+
+
+    <!-- <h2>Weekly Coding Challenge #1: Sign in/up Form</h2> -->
+    <div class="container" id="container">
+        <video autoplay muted loop id="bg-video">
+            <source src="{% static 'bg.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="form-container sign-in-container">
+
+            <form id="loginForm" method="POST" onsubmit="getLocationAndSubmitForm(); return false;">
+                {% csrf_token %}
+                <h1 style="margin-bottom: 20px;">Sign in Now</h1>
+                {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'error' %}
+                    <center>
+                        <div style="display: inline-block; background-color: #ffdddd; border: 1px solid firebrick; border-radius: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                            <h4 style="color: firebrick; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; margin: 0;">{{message}}</h4>
+                        </div>
+                    </center>
+                    {% else %}
+                    <center>
+                        <div style="display: inline-block; background-color: #e7f3ff; border: 1px solid dodgerblue; border-radius: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                            <h4 id="counter" style="color: dodgerblue; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; margin: 0;">{{message}}</h4>
+                        </div>
+                    </center>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>Enter username and password</span>
+                <input type="text" required name="username">
+                <input type="password" required name="password">
+                <a href="{% url 'forgot-password' %}">Forgot your password?</a>
+                <input id="submit" type="submit" value="Login">
+            </form>
+
+
+            <!-- <form id="loginForm" method="POST" onsubmit="getLocationAndSubmitForm(); return false;">
+
+        {% csrf_token %} -->
+
+
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="changepage" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('changepage').addEventListener('click', function () {
+            setTimeout(function () {
+                window.location.href = "{% url 'register' %}";
+            }, 100); // 2000 milliseconds = 2 seconds
+        });
+    </script>
+    <!-- <script src="{% static 'js/script.js' %}"></script> -->
+</body>
+
+</html>
