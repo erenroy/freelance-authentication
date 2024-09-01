@@ -1,0 +1,80 @@
+PROJECT NAME: Secure Employee Management System with Django
+
+TECHNOLOGY USED FOR THE PROJECT:  
+FRONTEND: HTML, CSS, JavaScript, Bootstrap  
+BACKEND: Python, Django  
+DATABASE: SQLite3
+
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+SOME ADVANCED SETTINGS YOU NEED TO DO TO GET APPROVAL OF THE FULL PROEJECT FOLLOW THIS STEPS CAREFULLY - 
+
+open settings.py file - 
+from line no 178 to 180 there are main settings , change them and put your details - 
+
+EMAIL_HOST_USER = 'noreplys2000@gmail.com'     # here put your email which will be used to send emails 
+EMAIL_HOST_PASSWORD = 'fnxu bfam bhtw asag'    # Your app password of the email you wrote ( you will get this on your gmail account just go and create an app password )
+DEFAULT_FROM_EMAIL = 'noreplys2000@gmail.com'  # Type the same email again 
+
+open views.py which is inside core folder - 
+Go to line no 282 and put your another email ( any another email not the one you used in settings.py )
+In this email you will get request for login approval emails . 
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+How to Run the Project:
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 1:  
+Open the `complete_project` folder in your IDE (VS Code, PyCharm).
+
+STEP 2:  
+You will find two folders:  
+- `myenv` (virtual environment – all required packages are pre-installed here)  
+- `dj3` (the main project folder)
+
+STEP 3:  
+Start the virtual environment:  
+1. Open the terminal.  
+2. Type:  
+   `myenv/scripts/activate`
+
+STEP 4:  
+Navigate to the main folder `dj3` by typing:  
+`cd dj3`  
+Make sure you are in the `dj3` directory where `manage.py` is located.
+
+STEP 5:  
+Install any missing dependencies by running:  
+`pip install -r requirements.txt`  
+(Ensure the virtual environment is active.)
+
+STEP 6:  
+Run the project with the command:  
+`python manage.py runserver`
+
+STEP 7:  
+Check the project by accessing the URL provided in the terminal.
+
+STEP 8:  
+To stop the project, press `Ctrl + C` in the terminal after verifying everything.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+
+CUSTOM ADMIN PANEL:  
+URL: http://127.0.0.1:8000/admin/  
+Username: appadmin  
+Password: appadmin
+
+The custom admin panel allows you to view all database data through a visual interface.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
